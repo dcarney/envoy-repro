@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+  envoy-one:
+    image: envoy:one
+    networks:
+      - envoytest
+    ports:
+      - "9901:9901"
+      - "10001:10001"
+  envoy-two:
+    image: envoy:two
+    networks:
+      - envoytest
+    ports:
+      - "9902:9902"
+      - "10002:10002"
+networks:
+  envoytest:

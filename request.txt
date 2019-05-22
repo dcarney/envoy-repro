@@ -1,0 +1,4 @@
+GET /foo HTTP/1.1
+Host: localhost:10001
+Some-Header: _𬹃목𗦍𠸞𠆽𩸺🢁ل𩠒𘙃抈𔑽🌻𢩹𣙄__
+
