@@ -1,0 +1,266 @@
+Attaching to envoy-repro_envoy-one_1, envoy-repro_envoy-two_1
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:248] initializing epoch 0 (hot restart version=11.104)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:250] statically linked extensions:
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:252]   access_loggers: envoy.file_access_log,envoy.http_grpc_access_log
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:255]   filters.http: envoy.buffer,envoy.cors,envoy.csrf,envoy.ext_authz,envoy.fault,envoy.filters.http.grpc_http1_reverse_bridge,envoy.filters.http.header_to_metadata,envoy.filters.http.jwt_authn,envoy.filters.http.rbac,envoy.filters.http.tap,envoy.grpc_http1_bridge,envoy.grpc_json_transcoder,envoy.grpc_web,envoy.gzip,envoy.health_check,envoy.http_dynamo_filter,envoy.ip_tagging,envoy.lua,envoy.rate_limit,envoy.router,envoy.squash
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:258]   filters.listener: envoy.listener.original_dst,envoy.listener.original_src,envoy.listener.proxy_protocol,envoy.listener.tls_inspector
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:261]   filters.network: envoy.client_ssl_auth,envoy.echo,envoy.ext_authz,envoy.filters.network.dubbo_proxy,envoy.filters.network.mysql_proxy,envoy.filters.network.rbac,envoy.filters.network.sni_cluster,envoy.filters.network.thrift_proxy,envoy.filters.network.zookeeper_proxy,envoy.http_connection_manager,envoy.mongo_proxy,envoy.ratelimit,envoy.redis_proxy,envoy.tcp_proxy
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:263]   stat_sinks: envoy.dog_statsd,envoy.metrics_service,envoy.stat_sinks.hystrix,envoy.statsd
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:265]   tracers: envoy.dynamic.ot,envoy.lightstep,envoy.tracers.datadog,envoy.zipkin
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:268]   transport_sockets.downstream: envoy.transport_sockets.alts,envoy.transport_sockets.tap,raw_buffer,tls
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:271]   transport_sockets.upstream: envoy.transport_sockets.alts,envoy.transport_sockets.tap,raw_buffer,tls
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.588][1][info][main] [source/server/server.cc:277] buffer implementation: old (libevent)
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:248] initializing epoch 0 (hot restart version=11.104)
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:250] statically linked extensions:
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:252]   access_loggers: envoy.file_access_log,envoy.http_grpc_access_log
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:255]   filters.http: envoy.buffer,envoy.cors,envoy.csrf,envoy.ext_authz,envoy.fault,envoy.filters.http.grpc_http1_reverse_bridge,envoy.filters.http.header_to_metadata,envoy.filters.http.jwt_authn,envoy.filters.http.rbac,envoy.filters.http.tap,envoy.grpc_http1_bridge,envoy.grpc_json_transcoder,envoy.grpc_web,envoy.gzip,envoy.health_check,envoy.http_dynamo_filter,envoy.ip_tagging,envoy.lua,envoy.rate_limit,envoy.router,envoy.squash
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:258]   filters.listener: envoy.listener.original_dst,envoy.listener.original_src,envoy.listener.proxy_protocol,envoy.listener.tls_inspector
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:261]   filters.network: envoy.client_ssl_auth,envoy.echo,envoy.ext_authz,envoy.filters.network.dubbo_proxy,envoy.filters.network.mysql_proxy,envoy.filters.network.rbac,envoy.filters.network.sni_cluster,envoy.filters.network.thrift_proxy,envoy.filters.network.zookeeper_proxy,envoy.http_connection_manager,envoy.mongo_proxy,envoy.ratelimit,envoy.redis_proxy,envoy.tcp_proxy
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:263]   stat_sinks: envoy.dog_statsd,envoy.metrics_service,envoy.stat_sinks.hystrix,envoy.statsd
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:265]   tracers: envoy.dynamic.ot,envoy.lightstep,envoy.tracers.datadog,envoy.zipkin
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:268]   transport_sockets.downstream: envoy.transport_sockets.alts,envoy.transport_sockets.tap,raw_buffer,tls
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:271]   transport_sockets.upstream: envoy.transport_sockets.alts,envoy.transport_sockets.tap,raw_buffer,tls
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.963][1][info][main] [source/server/server.cc:277] buffer implementation: old (libevent)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.596][1][info][main] [source/server/server.cc:322] admin address: 127.0.0.1:9901
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.596][1][debug][main] [source/server/overload_manager_impl.cc:171] No overload action is configured for envoy.overload_actions.shrink_heap.
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.597][1][debug][main] [source/server/overload_manager_impl.cc:171] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.597][1][debug][main] [source/server/overload_manager_impl.cc:171] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.597][1][info][config] [source/server/configuration_impl.cc:50] loading 0 static secret(s)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.597][1][info][config] [source/server/configuration_impl.cc:56] loading 1 cluster(s)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.597][9][debug][grpc] [source/common/grpc/google_async_client_impl.cc:41] completionThread running
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.970][1][info][main] [source/server/server.cc:322] admin address: 127.0.0.1:9901
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.970][1][debug][main] [source/server/overload_manager_impl.cc:171] No overload action is configured for envoy.overload_actions.shrink_heap.
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.970][1][debug][main] [source/server/overload_manager_impl.cc:171] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.970][1][debug][main] [source/server/overload_manager_impl.cc:171] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.970][1][info][config] [source/server/configuration_impl.cc:50] loading 0 static secret(s)
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.970][1][info][config] [source/server/configuration_impl.cc:56] loading 1 cluster(s)
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.970][9][debug][grpc] [source/common/grpc/google_async_client_impl.cc:41] completionThread running
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.971][1][info][config] [source/server/configuration_impl.cc:60] loading 1 listener(s)
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.971][1][debug][config] [source/server/configuration_impl.cc:62] listener #0:
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.971][1][debug][config] [source/server/listener_manager_impl.cc:741] begin add/update listener: name=listener_0 hash=6001625575905539414
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.971][1][debug][config] [source/server/listener_manager_impl.cc:55]   filter #0:
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.971][1][debug][config] [source/server/listener_manager_impl.cc:56]     name: envoy.http_connection_manager
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.971][1][debug][config] [source/server/listener_manager_impl.cc:59]   config: {}
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][info][config] [source/server/configuration_impl.cc:60] loading 1 listener(s)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][debug][config] [source/server/configuration_impl.cc:62] listener #0:
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][debug][config] [source/server/listener_manager_impl.cc:741] begin add/update listener: name=listener_0 hash=11099951307804228991
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][debug][config] [source/server/listener_manager_impl.cc:55]   filter #0:
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][debug][config] [source/server/listener_manager_impl.cc:56]     name: envoy.http_connection_manager
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][debug][config] [source/server/listener_manager_impl.cc:59]   config: {}
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:306]     http filter #0
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:307]       name: envoy.router
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:311]     config: {}
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][debug][config] [source/server/listener_manager_impl.cc:632] add active listener: name=listener_0, hash=11099951307804228991, address=0.0.0.0:10001
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][info][config] [source/server/configuration_impl.cc:85] loading tracing configuration
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.602][1][info][config] [source/server/configuration_impl.cc:105] loading stats sink configuration
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.603][1][info][main] [source/server/server.cc:525] starting main dispatch loop
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.977][1][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:306]     http filter #0
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.605][1][debug][init] [source/common/init/manager_impl.cc:45] init manager Cluster service_foobar contains no targets
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.605][1][debug][init] [source/common/init/watcher_impl.cc:14] init manager Cluster service_foobar initialized, notifying ClusterImplBase
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.605][1][info][upstream] [source/common/upstream/cluster_manager_impl.cc:147] cm init: all clusters initialized
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.605][1][info][main] [source/server/server.cc:509] all clusters initialized. initializing init manager
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.605][1][debug][init] [source/common/init/manager_impl.cc:45] init manager Server contains no targets
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.605][1][debug][init] [source/common/init/watcher_impl.cc:14] init manager Server initialized, notifying RunHelper
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.605][1][info][config] [source/server/listener_manager_impl.cc:1012] all dependencies initialized. starting workers
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.606][11][debug][main] [source/server/worker_impl.cc:101] worker entering dispatch loop
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.606][13][debug][grpc] [source/common/grpc/google_async_client_impl.cc:41] completionThread running
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.606][12][debug][main] [source/server/worker_impl.cc:101] worker entering dispatch loop
+[36menvoy-one_1  |[0m [2019-05-23 16:31:03.606][14][debug][grpc] [source/common/grpc/google_async_client_impl.cc:41] completionThread running
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.977][1][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:307]       name: envoy.router
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.977][1][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:311]     config: {}
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.978][1][debug][config] [source/server/listener_manager_impl.cc:632] add active listener: name=listener_0, hash=6001625575905539414, address=0.0.0.0:10002
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.978][1][info][config] [source/server/configuration_impl.cc:85] loading tracing configuration
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.978][1][info][config] [source/server/configuration_impl.cc:105] loading stats sink configuration
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.979][1][info][main] [source/server/server.cc:525] starting main dispatch loop
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.980][1][debug][init] [source/common/init/manager_impl.cc:45] init manager Cluster service_google contains no targets
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.980][1][debug][init] [source/common/init/watcher_impl.cc:14] init manager Cluster service_google initialized, notifying ClusterImplBase
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.980][1][info][upstream] [source/common/upstream/cluster_manager_impl.cc:147] cm init: all clusters initialized
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.980][1][info][main] [source/server/server.cc:509] all clusters initialized. initializing init manager
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.980][1][debug][init] [source/common/init/manager_impl.cc:45] init manager Server contains no targets
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.980][1][debug][init] [source/common/init/watcher_impl.cc:14] init manager Server initialized, notifying RunHelper
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.980][1][info][config] [source/server/listener_manager_impl.cc:1012] all dependencies initialized. starting workers
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.980][11][debug][main] [source/server/worker_impl.cc:101] worker entering dispatch loop
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.980][13][debug][grpc] [source/common/grpc/google_async_client_impl.cc:41] completionThread running
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.981][12][debug][main] [source/server/worker_impl.cc:101] worker entering dispatch loop
+[33menvoy-two_1  |[0m [2019-05-23 16:31:03.981][14][debug][grpc] [source/common/grpc/google_async_client_impl.cc:41] completionThread running
+[36menvoy-one_1  |[0m [2019-05-23 16:31:08.605][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:08.979][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:13.603][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:13.986][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:18.576][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:18.962][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:23.586][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:23.953][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:28.595][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:28.962][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:33.613][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:33.958][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:35.073][11][debug][main] [source/server/connection_handler_impl.cc:257] [C0] new connection
+[36menvoy-one_1  |[0m [2019-05-23 16:31:35.073][11][trace][connection] [source/common/network/connection_impl.cc:456] [C0] socket event: 2
+[36menvoy-one_1  |[0m [2019-05-23 16:31:35.073][11][trace][connection] [source/common/network/connection_impl.cc:541] [C0] write ready
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.072][11][debug][main] [source/server/connection_handler_impl.cc:257] [C0] new connection
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.072][11][trace][connection] [source/common/network/connection_impl.cc:456] [C0] socket event: 2
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.072][11][trace][connection] [source/common/network/connection_impl.cc:541] [C0] write ready
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/connection_impl.cc:456] [C0] socket event: 3
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/connection_impl.cc:541] [C0] write ready
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/connection_impl.cc:494] [C0] read ready
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/raw_buffer_socket.cc:23] [C0] read returns: 244
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/raw_buffer_socket.cc:37] [C0] read error: Resource temporarily unavailable
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][debug][http2] [source/common/http/http2/codec_impl.cc:725] [C0] setting stream-level initial window size to 268435456
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][debug][http2] [source/common/http/http2/codec_impl.cc:747] [C0] updating connection-level initial window size to 268435456
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][trace][http2] [source/common/http/http2/codec_impl.cc:343] [C0] dispatching 244 bytes
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][trace][http2] [source/common/http/http2/codec_impl.cc:401] [C0] recv frame type=4
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][trace][http2] [source/common/http/http2/codec_impl.cc:401] [C0] recv frame type=8
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.073][11][debug][http] [source/common/http/conn_manager_impl.cc:243] [C0] new stream
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.074][11][debug][http2] [source/common/http/http2/codec_impl.cc:539] [C0] invalid frame: Invalid HTTP header field was received on stream 1
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.074][11][trace][http2] [source/common/http/http2/codec_impl.cc:358] [C0] dispatched 244 bytes
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.074][11][trace][http2] [source/common/http/http2/codec_impl.cc:558] [C0] send data: bytes=15
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.074][11][trace][connection] [source/common/network/connection_impl.cc:392] [C0] writing 15 bytes, end_stream false
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.074][11][trace][http2] [source/common/http/http2/codec_impl.cc:511] [C0] sent frame type=4
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.074][11][trace][http2] [source/common/http/http2/codec_impl.cc:558] [C0] send data: bytes=9
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.074][11][trace][connection] [source/common/network/connection_impl.cc:392] [C0] writing 9 bytes, end_stream false
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][http2] [source/common/http/http2/codec_impl.cc:511] [C0] sent frame type=4
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][http2] [source/common/http/http2/codec_impl.cc:558] [C0] send data: bytes=13
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:392] [C0] writing 13 bytes, end_stream false
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][http2] [source/common/http/http2/codec_impl.cc:511] [C0] sent frame type=8
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][http2] [source/common/http/http2/codec_impl.cc:558] [C0] send data: bytes=13
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:392] [C0] writing 13 bytes, end_stream false
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][http2] [source/common/http/http2/codec_impl.cc:511] [C0] sent frame type=3
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][debug][http2] [source/common/http/http2/codec_impl.cc:521] [C0] sent reset code=1
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][debug][http2] [source/common/http/http2/codec_impl.cc:567] [C0] stream closed: 1
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][main] [source/common/event/dispatcher_impl.cc:144] item added to deferred deletion list (size=1)
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][main] [source/common/event/dispatcher_impl.cc:144] item added to deferred deletion list (size=2)
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:456] [C0] socket event: 2
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:541] [C0] write ready
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/raw_buffer_socket.cc:66] [C0] write returns: 50
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.075][11][trace][main] [source/common/event/dispatcher_impl.cc:64] clearing deferred deletion list (size=2)
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/connection_impl.cc:456] [C0] socket event: 3
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/connection_impl.cc:541] [C0] write ready
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/connection_impl.cc:494] [C0] read ready
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/raw_buffer_socket.cc:23] [C0] read returns: 9
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/raw_buffer_socket.cc:37] [C0] read error: Resource temporarily unavailable
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.077][11][trace][http2] [source/common/http/http2/codec_impl.cc:343] [C0] dispatching 9 bytes
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.077][11][trace][http2] [source/common/http/http2/codec_impl.cc:401] [C0] recv frame type=4
+[33menvoy-two_1  |[0m [2019-05-23 16:31:36.077][11][trace][http2] [source/common/http/http2/codec_impl.cc:358] [C0] dispatched 9 bytes
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.068][11][trace][connection] [source/common/network/connection_impl.cc:456] [C0] socket event: 3
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.068][11][trace][connection] [source/common/network/connection_impl.cc:541] [C0] write ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.068][11][trace][connection] [source/common/network/connection_impl.cc:494] [C0] read ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.068][11][trace][connection] [source/common/network/raw_buffer_socket.cc:23] [C0] read returns: 119
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.068][11][trace][connection] [source/common/network/raw_buffer_socket.cc:37] [C0] read error: Resource temporarily unavailable
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.068][11][trace][http] [source/common/http/http1/codec_impl.cc:366] [C0] parsing 119 bytes
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.068][11][trace][http] [source/common/http/http1/codec_impl.cc:479] [C0] message begin
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.068][11][debug][http] [source/common/http/conn_manager_impl.cc:243] [C0] new stream
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.069][11][trace][http] [source/common/http/http1/codec_impl.cc:334] [C0] completed header: key=Host value=localhost:10001
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.070][11][trace][http] [source/common/http/http1/codec_impl.cc:445] [C0] headers complete
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.071][11][trace][http] [source/common/http/http1/codec_impl.cc:334] [C0] completed header: key=Some-Header value=_𬹃목𗦍𠸞𠆽𩸺🢁ل𩠒𘙃抈𔑽🌻𢩹𣙄__
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.071][11][trace][http] [source/common/http/http1/codec_impl.cc:466] [C0] message complete
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.071][11][debug][http] [source/common/http/conn_manager_impl.cc:583] [C0][S8542315413287350126] request headers complete (end_stream=true):
+[36menvoy-one_1  |[0m ':authority', 'localhost:10001'
+[36menvoy-one_1  |[0m ':path', '/foo'
+[36menvoy-one_1  |[0m ':method', 'GET'
+[36menvoy-one_1  |[0m 'some-header', '_𬹃목𗦍𠸞𠆽𩸺🢁ل𩠒𘙃抈𔑽🌻𢩹𣙄__'
+[36menvoy-one_1  |[0m 
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.071][11][debug][http] [source/common/http/conn_manager_impl.cc:1062] [C0][S8542315413287350126] request end stream
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.071][11][debug][router] [source/common/router/router.cc:332] [C0][S8542315413287350126] cluster 'service_foobar' match for URL '/foo'
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.071][11][debug][router] [source/common/router/router.cc:398] [C0][S8542315413287350126] router decoding headers:
+[36menvoy-one_1  |[0m ':authority', 'www.foobar.com'
+[36menvoy-one_1  |[0m ':path', '/foo'
+[36menvoy-one_1  |[0m ':method', 'GET'
+[36menvoy-one_1  |[0m ':scheme', 'http'
+[36menvoy-one_1  |[0m 'some-header', '_𬹃목𗦍𠸞𠆽𩸺🢁ل𩠒𘙃抈𔑽🌻𢩹𣙄__'
+[36menvoy-one_1  |[0m 'x-forwarded-proto', 'http'
+[36menvoy-one_1  |[0m 'x-request-id', '4c9853cb-4db7-4511-8953-5899a921ca1f'
+[36menvoy-one_1  |[0m 'x-envoy-expected-rq-timeout-ms', '15000'
+[36menvoy-one_1  |[0m 
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.071][11][debug][client] [source/common/http/codec_client.cc:26] [C1] connecting
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.071][11][debug][connection] [source/common/network/connection_impl.cc:702] [C1] connecting to 192.168.80.3:10002
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][debug][connection] [source/common/network/connection_impl.cc:711] [C1] connection in progress
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][debug][http2] [source/common/http/http2/codec_impl.cc:725] [C1] setting stream-level initial window size to 268435456
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][debug][http2] [source/common/http/http2/codec_impl.cc:747] [C1] updating connection-level initial window size to 268435456
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][debug][pool] [source/common/http/conn_pool_base.cc:20] queueing request due to no available connections
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][trace][http] [source/common/http/conn_manager_impl.cc:833] [C0][S8542315413287350126] decode headers called: filter=0x2156730 status=1
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][trace][http] [source/common/http/http1/codec_impl.cc:387] [C0] parsed 119 bytes
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][trace][connection] [source/common/network/connection_impl.cc:288] [C0] readDisable: enabled=true disable=true
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][trace][connection] [source/common/network/connection_impl.cc:456] [C1] socket event: 2
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][trace][connection] [source/common/network/connection_impl.cc:541] [C1] write ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][debug][connection] [source/common/network/connection_impl.cc:550] [C1] connected
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][debug][client] [source/common/http/codec_client.cc:64] [C1] connected
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][debug][pool] [source/common/http/http2/conn_pool.cc:96] [C1] creating stream
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][debug][router] [source/common/router/router.cc:1215] [C0][S8542315413287350126] pool ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.072][11][trace][http2] [source/common/http/http2/codec_impl.cc:558] [C1] send data: bytes=24
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/connection_impl.cc:392] [C1] writing 24 bytes, end_stream false
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][http2] [source/common/http/http2/codec_impl.cc:558] [C1] send data: bytes=21
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/connection_impl.cc:392] [C1] writing 21 bytes, end_stream false
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][http2] [source/common/http/http2/codec_impl.cc:511] [C1] sent frame type=4
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][http2] [source/common/http/http2/codec_impl.cc:558] [C1] send data: bytes=13
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/connection_impl.cc:392] [C1] writing 13 bytes, end_stream false
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][http2] [source/common/http/http2/codec_impl.cc:511] [C1] sent frame type=8
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][http2] [source/common/http/http2/codec_impl.cc:558] [C1] send data: bytes=186
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/connection_impl.cc:392] [C1] writing 186 bytes, end_stream false
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][http2] [source/common/http/http2/codec_impl.cc:511] [C1] sent frame type=1
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.073][11][trace][connection] [source/common/network/connection_impl.cc:541] [C1] write ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/raw_buffer_socket.cc:66] [C1] write returns: 244
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:456] [C0] socket event: 2
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:541] [C0] write ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:456] [C1] socket event: 2
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:541] [C1] write ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:456] [C1] socket event: 3
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:541] [C1] write ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/connection_impl.cc:494] [C1] read ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/raw_buffer_socket.cc:23] [C1] read returns: 50
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][connection] [source/common/network/raw_buffer_socket.cc:37] [C1] read error: Resource temporarily unavailable
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.075][11][trace][http2] [source/common/http/http2/codec_impl.cc:343] [C1] dispatching 50 bytes
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][http2] [source/common/http/http2/codec_impl.cc:401] [C1] recv frame type=4
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][http2] [source/common/http/http2/codec_impl.cc:401] [C1] recv frame type=4
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][http2] [source/common/http/http2/codec_impl.cc:401] [C1] recv frame type=8
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][http2] [source/common/http/http2/codec_impl.cc:401] [C1] recv frame type=3
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][http2] [source/common/http/http2/codec_impl.cc:497] [C1] remote reset: 1
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][debug][http2] [source/common/http/http2/codec_impl.cc:567] [C1] stream closed: 1
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][debug][client] [source/common/http/codec_client.cc:105] [C1] request reset
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][main] [source/common/event/dispatcher_impl.cc:144] item added to deferred deletion list (size=1)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][debug][pool] [source/common/http/http2/conn_pool.cc:237] [C1] destroying stream: 0 remaining
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][debug][router] [source/common/router/router.cc:676] [C0][S8542315413287350126] upstream reset: reset reason remote reset
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][debug][http] [source/common/http/conn_manager_impl.cc:1137] [C0][S8542315413287350126] Sending local reply with details upstream_reset_before_response_started{remote reset}
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][debug][http] [source/common/http/conn_manager_impl.cc:1329] [C0][S8542315413287350126] encoding headers via codec (end_stream=false):
+[36menvoy-one_1  |[0m ':status', '503'
+[36menvoy-one_1  |[0m 'content-length', '85'
+[36menvoy-one_1  |[0m 'content-type', 'text/plain'
+[36menvoy-one_1  |[0m 'date', 'Thu, 23 May 2019 16:31:36 GMT'
+[36menvoy-one_1  |[0m 'server', 'envoy'
+[36menvoy-one_1  |[0m 
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/connection_impl.cc:392] [C0] writing 134 bytes, end_stream false
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][http] [source/common/http/conn_manager_impl.cc:1467] [C0][S8542315413287350126] encoding data via codec (size=85 end_stream=true)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/connection_impl.cc:392] [C0] writing 85 bytes, end_stream false
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][main] [source/common/event/dispatcher_impl.cc:144] item added to deferred deletion list (size=2)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/connection_impl.cc:288] [C0] readDisable: enabled=false disable=false
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][main] [source/common/event/dispatcher_impl.cc:144] item added to deferred deletion list (size=3)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][http2] [source/common/http/http2/codec_impl.cc:358] [C1] dispatched 50 bytes
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][http2] [source/common/http/http2/codec_impl.cc:558] [C1] send data: bytes=9
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/connection_impl.cc:392] [C1] writing 9 bytes, end_stream false
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][http2] [source/common/http/http2/codec_impl.cc:511] [C1] sent frame type=4
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][main] [source/common/event/dispatcher_impl.cc:64] clearing deferred deletion list (size=3)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/connection_impl.cc:456] [C1] socket event: 2
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.076][11][trace][connection] [source/common/network/connection_impl.cc:541] [C1] write ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.077][11][trace][connection] [source/common/network/raw_buffer_socket.cc:66] [C1] write returns: 9
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.077][11][trace][connection] [source/common/network/connection_impl.cc:456] [C0] socket event: 2
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.077][11][trace][connection] [source/common/network/connection_impl.cc:541] [C0] write ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:36.077][11][trace][connection] [source/common/network/raw_buffer_socket.cc:66] [C0] write returns: 219
+[36menvoy-one_1  |[0m [2019-05-23 16:31:37.069][11][trace][connection] [source/common/network/connection_impl.cc:456] [C0] socket event: 3
+[36menvoy-one_1  |[0m [2019-05-23 16:31:37.069][11][trace][connection] [source/common/network/connection_impl.cc:541] [C0] write ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:37.070][11][trace][connection] [source/common/network/connection_impl.cc:494] [C0] read ready
+[36menvoy-one_1  |[0m [2019-05-23 16:31:37.070][11][trace][connection] [source/common/network/raw_buffer_socket.cc:23] [C0] read returns: 0
+[36menvoy-one_1  |[0m [2019-05-23 16:31:37.070][11][debug][connection] [source/common/network/connection_impl.cc:518] [C0] remote close
+[36menvoy-one_1  |[0m [2019-05-23 16:31:37.070][11][debug][connection] [source/common/network/connection_impl.cc:188] [C0] closing socket: 0
+[36menvoy-one_1  |[0m [2019-05-23 16:31:37.070][11][debug][main] [source/server/connection_handler_impl.cc:68] [C0] adding to cleanup list
+[36menvoy-one_1  |[0m [2019-05-23 16:31:37.070][11][trace][main] [source/common/event/dispatcher_impl.cc:144] item added to deferred deletion list (size=1)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:37.070][11][trace][main] [source/common/event/dispatcher_impl.cc:64] clearing deferred deletion list (size=1)
+[36menvoy-one_1  |[0m [2019-05-23 16:31:38.607][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:38.954][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:43.613][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:43.974][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:48.580][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:48.951][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:53.581][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:53.957][1][debug][main] [source/server/server.cc:193] flushing stats
+[36menvoy-one_1  |[0m [2019-05-23 16:31:58.589][1][debug][main] [source/server/server.cc:193] flushing stats
+[33menvoy-two_1  |[0m [2019-05-23 16:31:58.958][1][debug][main] [source/server/server.cc:193] flushing stats
