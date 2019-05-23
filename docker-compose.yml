@@ -2,6 +2,7 @@ version: "3.1"
 services:
   envoy-one:
     image: envoy:one
+    command: /usr/local/bin/envoy --log-level trace --component-log-level upstream:info -c /etc/envoy/envoy.yaml
     networks:
       - envoytest
     ports:
@@ -9,6 +10,7 @@ services:
       - "10001:10001"
   envoy-two:
     image: envoy:two
+    command: /usr/local/bin/envoy --log-level trace --component-log-level upstream:info -c /etc/envoy/envoy.yaml
     networks:
       - envoytest
     ports:
