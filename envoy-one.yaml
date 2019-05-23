@@ -39,7 +39,10 @@ static_resources:
     # Comment out the following line to test on v6 networks
     dns_lookup_family: V4_ONLY
     lb_policy: ROUND_ROBIN
-    http2_protocol_options: {}
+    tls_context:
+    http2_protocol_options:
+        hpack_table_size:
+        max_concurrent_streams:
     load_assignment:
       cluster_name: service_foobar
       endpoints:
